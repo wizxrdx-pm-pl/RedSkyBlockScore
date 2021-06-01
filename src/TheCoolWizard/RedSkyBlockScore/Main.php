@@ -38,7 +38,7 @@ class Main extends pluginBase {
 	}
     
     public function getIslandSize(Player $player) {
-        $islandSize = $this->owningPlugin->getIslandSize($player->getName());
+        $islandSize = $this->owningPlugin->getIslandSize($player);
 
         if ($islandSize === null) {
             $islandSize = "§7N/A";
@@ -49,7 +49,7 @@ class Main extends pluginBase {
     }
 
     public function isIslandLocked(Player $player) {
-        $islandLock = $this->owningPlugin->isIslandLocked($player->getName());
+        $islandLock = $this->owningPlugin->isIslandLocked($player);
 
         if ($islandLock === null) {
             $islandLock = "§7N/A";
@@ -63,7 +63,7 @@ class Main extends pluginBase {
     }
 
     public function getIslandValue(Player $player) {
-        $islandValue = $this->owningPlugin->getIslandValue($player->getName());
+        $islandValue = $this->owningPlugin->getIslandValue($player);
 
         if ($islandValue === null) {
             $islandValue = "§7N/A";
