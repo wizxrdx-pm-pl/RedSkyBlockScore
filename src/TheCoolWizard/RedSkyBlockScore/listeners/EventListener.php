@@ -47,7 +47,7 @@ class EventListener implements Listener{
     }
 
     public function onEntityLevelChange(EntityLevelChangeEvent $event) {
-        $entity = $event->getPlayer();
+        $entity = $event->getEntity();
 
         if (!$entity instanceof Player) return;
         if (!$this->onMasterWorld($entity)) return;
