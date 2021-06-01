@@ -6,6 +6,7 @@ namespace TheCoolWizard\RedSkyBlockScore;
 
 use RedSkyBlock\RedCraftPE\RedSkyBlock;
 use TheCoolWizard\RedSkyBlockScore\listeners\TagResolveListener;
+use TheCoolWizard\RedSkyBlockScore\listeners\EventListener;
 use Ifera\ScoreHud\event\PlayerTagUpdateEvent;
 use Ifera\ScoreHud\scoreboard\ScoreTag;
 use pocketmine\Player;
@@ -50,7 +51,7 @@ class Main extends pluginBase {
     private function isIslandExists(Player $player) {
         $skyBlockArray = $this->owningPlugin->skyblock->get("SkyBlock", []);
 
-        if (array_key_exists($player->getName(), $skyBlockArray)) {
+        if (array_key_exists(strtolower($player->getName()), $skyBlockArray)) {
             return null;
         }
     }
