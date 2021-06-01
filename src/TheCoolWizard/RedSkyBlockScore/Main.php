@@ -38,48 +38,34 @@ class Main extends pluginBase {
 	}
     
     public function getIslandSize(Player $player) {
-        $islandSize = $this->owningPlugin->getIslandSize($player);
+        if ($this->isIslandExists($player) === null) return "§7N/A";
 
-        if ($islandSize === null) {
-            $islandSize = "§7N/A";
-        }
-
-        return $islandSize;
-
+        return $this->owningPlugin->getIslandSize($player);
     }
 
     public function isIslandLocked(Player $player) {
-        $islandLock = $this->owningPlugin->isIslandLocked($player);
+        if ($this->isIslandExists($player) === null) return "§7N/A";
 
-        if ($islandLock === null) {
-            $islandLock = "§7N/A";
-        }elseif ($islandLock == true) {
-            $islandLock = "Yes";
-        }else{
-            $islandLock = "No";
-        }
-
-        return $islandLock;
+        return $this->owningPlugin->isIslandLocked($player)? "Yes" : "No";
     }
 
     public function getIslandValue(Player $player) {
-        $islandValue = $this->owningPlugin->getIslandValue($player);
+        if ($this->isIslandExists($player) === null) return "§7N/A";
 
-        if ($islandValue === null) {
-            $islandValue = "§7N/A";
-        }
-
-        return $islandValue;
-
+        return $islandValue = $this->owningPlugin->getIslandValue($player);
     }
-
+    
     public function getIslandRank(Player $player): int {
-        $islandRank = $this->owningPlugin->getIslandRank($player->getName());
+        if ($this->isIslandExists($player) === null) return "§7N/A";
 
-        if ($islandRank === null) {
-            $islandRank = "§7N/A";
+        return $islandValue = $this->owningPlugin->getIslandRank($player);
+    }
+    
+    private function isIslandExists(Player $player) {
+        $skyBlockArray = $this->owningPugin->skyblock->get("SkyBlock", []);
+
+        if (array_key_exists($player->getName(), $skyBlockArray)) {
+            return null;
         }
-
-        return $islandRank;
     }
 }
