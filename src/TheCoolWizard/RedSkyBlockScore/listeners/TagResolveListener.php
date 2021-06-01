@@ -22,7 +22,6 @@ class TagResolveListener implements Listener{
 	public function onTagResolve(TagsResolveEvent $event){
 		$tag = $event->getTag();
 		$tags = explode('.', $tag->getName(), 2);
-		$value = "";
 
 		if($tags[0] !== 'redskyblockscore' || count($tags) < 2){
 			return;

@@ -10,7 +10,6 @@ use Ifera\ScoreHud\event\PlayerTagUpdateEvent;
 use Ifera\ScoreHud\scoreboard\ScoreTag;
 use pocketmine\Player;
 use pocketmine\plugin\PluginBase;
-use pocketmine\scheduler\ClosureTask;
 use function strval;
 
 class Main extends pluginBase {
@@ -20,21 +19,8 @@ class Main extends pluginBase {
     public function onEnable() : void {
         $this->saveDefaultConfig();
         $this->owningPlugin = $this->getServer()->getPluginManager()->getPlugin("RedSkyBlock");
-
         $this->getServer()->getPluginManager()->registerEvents(new TagResolveListener($this), $this);
-
-        $this->getScheduler()->scheduleRepeatingTask(new ClosureTask(function(int $_): void{
-			foreach($this->getServer()->getOnlinePlayers() as $player){
-				if(!$player->isOnline()){
-					continue;
-				}
-
-				(new PlayerTagUpdateEvent($player, new ScoreTag("redskyblockscore.islandsize", strval($this->getIslandSize($player)))))->call();
-				(new PlayerTagUpdateEvent($player, new ScoreTag("redskyblockscore.islandlock", strval($this->isIslandLocked($player)))))->call();
-                (new PlayerTagUpdateEvent($player, new ScoreTag("redskyblockscore.islandvalue", strval($this->getIslandValue($player)))))->call();
-                (new PlayerTagUpdateEvent($player, new ScoreTag("redskyblockscore.islandrank", strval($this->getIslandRank($player)))))->call();
-			}
-		}), 20);
+        $this->getServer()->getPluginManager()->registerEvents(new EventListener($this), $this);
 	}
     
     public function getIslandSize(Player $player) {
