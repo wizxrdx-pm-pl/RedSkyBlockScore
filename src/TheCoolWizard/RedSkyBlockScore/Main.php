@@ -55,7 +55,7 @@ class Main extends pluginBase {
         return $islandValue = $this->owningPlugin->getIslandValue($player);
     }
     
-    public function getIslandRank(Player $player): int {
+    public function getIslandRank(Player $player) {
         if ($this->isIslandExists($player) === null) return "§7N/A";
 
         return $islandValue = $this->owningPlugin->getIslandRank($player);
