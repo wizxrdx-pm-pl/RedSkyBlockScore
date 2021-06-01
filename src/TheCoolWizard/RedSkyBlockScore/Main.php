@@ -7,8 +7,6 @@ namespace TheCoolWizard\RedSkyBlockScore;
 use RedSkyBlock\RedCraftPE\RedSkyBlock;
 use TheCoolWizard\RedSkyBlockScore\listeners\TagResolveListener;
 use TheCoolWizard\RedSkyBlockScore\listeners\EventListener;
-use Ifera\ScoreHud\event\PlayerTagUpdateEvent;
-use Ifera\ScoreHud\scoreboard\ScoreTag;
 use pocketmine\Player;
 use pocketmine\plugin\PluginBase;
 use function strval;
@@ -52,8 +50,10 @@ class Main extends pluginBase {
         $skyBlockArray = $this->owningPlugin->skyblock->get("SkyBlock", []);
 
         if (array_key_exists(strtolower($player->getName()), $skyBlockArray)) {
-            return null;
+            return true;
         }
+        
+        return null;
     }
 
     public function getOwningPlugin() {
