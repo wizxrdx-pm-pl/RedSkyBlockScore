@@ -53,7 +53,7 @@ class Main extends pluginBase {
 
         if ($islandLock === null) {
             $islandLock = "§7N/A";
-        } (elseif $islandLock == true) {
+        }elseif ($islandLock == true) {
             $islandLock = "Yes";
         }else{
             $islandLock = "No";
