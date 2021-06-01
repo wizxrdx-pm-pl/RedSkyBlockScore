@@ -57,7 +57,7 @@ class EventListener implements Listener{
     }
 
     private function onMasterWorld($player) {
-        $skyblock_cfg = $this->plugin->owningPlugin->skyblock;
+        $skyblock_cfg = $this->plugin->getOwningPlugin()->skyblock;
         if ($player->getLevel()->getFolderName() === $skyblock_cfg->get("Master World") || $player->getLevel()->getFolderName() === $skyblock_cfg->get("Master World") . "-Nether") {
             return true;
         }else{

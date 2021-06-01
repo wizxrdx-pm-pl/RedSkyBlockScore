@@ -55,4 +55,8 @@ class Main extends pluginBase {
             return null;
         }
     }
+
+    public function getOwningPlugin() {
+        return $this->owningPlugin;
+    }
 }
