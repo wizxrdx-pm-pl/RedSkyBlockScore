@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 
-namespace Ifera\RedSkyBlockScore\listeners;
+namespace TheCoolWizard\RedSkyBlockScore\listeners;
 
 use Ifera\ScoreHud\event\TagsResolveEvent;
 use TheCoolWizard\RedSkyBlockScore\Main;
