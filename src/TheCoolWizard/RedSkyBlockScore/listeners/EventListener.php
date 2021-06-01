@@ -28,7 +28,7 @@ class EventListener implements Listener{
 
         $valuableArray = $this->plugin->getOwningPlugin()->cfg->get("Valuable Blocks", []);
         
-        if (!onMasterWorld($player)) return;
+        if (!$this->onMasterWorld($player)) return;
         if (!array_key_exists(strval($block->getID()), $valuableArray)) return;
 
         (new PlayerTagUpdateEvent($player, new ScoreTag("redskyblockscore.islandvalue", strval($this->plugin->getIslandValue($player)))))->call();
