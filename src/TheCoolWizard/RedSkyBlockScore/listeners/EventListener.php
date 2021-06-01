@@ -52,8 +52,8 @@ class EventListener implements Listener{
         if (!$entity instanceof Player) return;
         if (!$this->onMasterWorld($entity)) return;
 
-        (new PlayerTagUpdateEvent($player, new ScoreTag("redskyblockscore.islandlock", strval($this->plugin->isIslandLocked($player)))))->call();
-        (new PlayerTagUpdateEvent($player, new ScoreTag("redskyblockscore.islandrank", strval($this->plugin->getIslandRank($player)))))->call();
+        (new PlayerTagUpdateEvent($player, new ScoreTag("redskyblockscore.islandlock", strval($this->plugin->isIslandLocked($entity)))))->call();
+        (new PlayerTagUpdateEvent($player, new ScoreTag("redskyblockscore.islandrank", strval($this->plugin->getIslandRank($entity)))))->call();
     }
 
     private function onMasterWorld($player) {
