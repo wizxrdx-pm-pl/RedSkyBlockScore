@@ -36,7 +36,6 @@ class Main extends pluginBase {
 			}
 		}), 20);
 	}
-    }
     
     public function getIslandSize(Player $player) {
         $islandSize = $this->owningPlugin->getIslandSize($player->getName());
