@@ -62,7 +62,7 @@ class Main extends pluginBase {
     }
     
     private function isIslandExists(Player $player) {
-        $skyBlockArray = $this->owningPugin->skyblock->get("SkyBlock", []);
+        $skyBlockArray = $this->owningPlugin->skyblock->get("SkyBlock", []);
 
         if (array_key_exists($player->getName(), $skyBlockArray)) {
             return null;
