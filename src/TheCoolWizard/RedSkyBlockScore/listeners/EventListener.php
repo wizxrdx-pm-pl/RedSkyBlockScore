@@ -26,7 +26,7 @@ class EventListener implements Listener{
 		$player = $event->getPlayer();
         $block = $event->getBlock();
 
-        $valuableArray = $this->plugin->owningPlugin->cfg->get("Valuable Blocks", []);
+        $valuableArray = $this->plugin->getOwningPlugin()->cfg->get("Valuable Blocks", []);
         
         if (!onMasterWorld($player)) return;
         if (!array_key_exists(strval($block->getID()), $valuableArray)) return;
@@ -38,7 +38,7 @@ class EventListener implements Listener{
         $player = $event->getPlayer();
         $block = $event->getBlock();
 
-        $valuableArray = $this->plugin->owningPlugin->cfg->get("Valuable Blocks", []);
+        $valuableArray = $this->plugin->getOwningPlugin()->cfg->get("Valuable Blocks", []);
         
         if (!$this->onMasterWorld($player)) return;
         if (!array_key_exists(strval($block->getID()), $valuableArray)) return;
