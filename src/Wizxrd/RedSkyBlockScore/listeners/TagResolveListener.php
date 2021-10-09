@@ -1,10 +1,10 @@
 <?php
 declare(strict_types = 1);
 
-namespace TheCoolWizard\RedSkyBlockScore\listeners;
+namespace Wizxrd\RedSkyBlockScore\listeners;
 
 use Ifera\ScoreHud\event\TagsResolveEvent;
-use TheCoolWizard\RedSkyBlockScore\Main;
+use Wizxrd\RedSkyBlockScore\Main;
 use pocketmine\event\Listener;
 use function count;
 use function explode;
