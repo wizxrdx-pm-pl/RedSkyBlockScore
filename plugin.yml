@@ -1,9 +1,9 @@
 ---
 name: RedSkyBlockScore
-main: TheCoolWizard\RedSkyBlockScore\Main
+main: Wizxrd\RedSkyBlockScore\Main
 version: 1
 api:
   - 3.0.0
-author: TheCoolWizard
+author: Wizxrd
 description: ScoreHud Tags for RedSkyBlock plugin
 depend: [RedSkyBlock, ScoreHud]
