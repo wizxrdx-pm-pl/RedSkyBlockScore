@@ -1,9 +1,9 @@
 <?php
 declare(strict_types = 1);
 
-namespace TheCoolWizard\RedSkyBlockScore\listeners;
+namespace Wizxrd\RedSkyBlockScore\listeners;
 
-use TheCoolWizard\RedSkyBlockScore\Main;
+use Wizxrd\RedSkyBlockScore\Main;
 use Ifera\ScoreHud\event\PlayerTagUpdateEvent;
 use Ifera\ScoreHud\scoreboard\ScoreTag;
 use pocketmine\event\block\BlockBreakEvent;
