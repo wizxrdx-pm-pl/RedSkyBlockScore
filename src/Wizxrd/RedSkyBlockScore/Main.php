@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace TheCoolWizard\RedSkyBlockScore;
+namespace Wizxrd\RedSkyBlockScore;
 
 use RedSkyBlock\RedCraftPE\RedSkyBlock;
-use TheCoolWizard\RedSkyBlockScore\listeners\TagResolveListener;
-use TheCoolWizard\RedSkyBlockScore\listeners\EventListener;
+use Wizxrd\RedSkyBlockScore\listeners\TagResolveListener;
+use Wizxrd\RedSkyBlockScore\listeners\EventListener;
 use pocketmine\Player;
 use pocketmine\plugin\PluginBase;
 use function strval;
